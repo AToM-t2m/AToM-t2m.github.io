@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Aligning Text-to-Motion Model at Event-Level with GPT-4Vision Reward.">
+  <meta name="keywords" content="RLHF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AToM: Aligning Text-to-Motion Model at Event-Level with GPT-4Vision Reward</title>
+  
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <style>
+    .superscript {
+      vertical-align: super;
+      font-size: smaller;
+    }
+    .custom-container {
+      max-width: 100%;
+      padding: 0 1.3rem;
+    }
+    .custom-image {
+      width: 100%; /* Adjust width as needed */
+      height: auto; /* Maintain aspect ratio */
+      margin-top: 0.5cm; /* Move the image down by 2 centimeters */
+    }
+    .custom-paragraph-1 {
+      margin-top: 0.55cm; /* Move the paragraph down by 1 centimeter */
+    }
+    .custom-paragraph-2 {
+      font-weight: bold; /* Make the font bold */
+      font-size: 1.5em;
+    }
+    .icon-container {
+    display: flex;
+    gap: 10px;
+    }
+    .icon-container i {
+        font-size: 50px;
+        color: #4A90E2;
+    }
+    .bibtex-section {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="custom-container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">AToM: Aligning Text-to-Motion Model<br>at Event-Level with GPT-4Vision Reward</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <span>Anonymous Authors<sup>*</sup></span></div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://atom-t2m.github.io/" target="_blank"><i class="fas fa-code"></i>Code (Coming soon)</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p style="font-size: 1.3em;">
+            Recently, text-to-motion models have opened new possibilities for creating realistic human motion with 
+            greater efficiency and flexibility. However, aligning motion generation with event-level textual descriptions 
+            presents unique challenges due to the complex relationship between textual prompts and desired motion outcomes. 
+          </p>
+            To address this, we introduce <strong>AToM</strong>, a framework that enhances the alignment between 
+            generated motion and text prompts by leveraging reward from GPT-4Vision. AToM comprises three main stages: 
+            Firstly, we construct a dataset \textnormal{\texttt{MotionPrefer}} that pairs three types of event-level 
+            textual prompts with generated motions, which cover the integrity, temporal relationship and frequency of motion. 
+          <p style="font-size: 1.3em;">
+            Secondly, we design a paradigm that utilizes GPT-4Vision for detailed motion annotation, including visual data 
+            formatting, task-specific instructions and scoring rules for each sub-task. Finally, we fine-tune an existing 
+            text-to-motion model using reinforcement learning guided by this paradigm. Experimental results demonstrate that 
+            <strong></strong>AToM</strong> significantly improves the event-level alignment quality of text-to-motion generation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pipeline Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Pipeline</h2>
+        <div class="publication-image">
+          <img src="./static/images/framework-1.png" alt="Pipeline Image">
+          <img src="./static/images/Pipeline1.jpg" alt="Pipeline Image">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Results Section -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Main results</h2>
+
+        <!-- Quantitative Experiment -->
+        <h3 class="title is-4">Quantitative experiment</h3>
+        <div class="content has-text-justified">
+          <p style="font-size: 1.3em;">
+            We conducted a quantitative experiment to evaluate the performance of <strong>AToM</strong> compared to baseline and existing methods. The results demonstrate that <strong>AToM</strong> achieves superior text-motion alignment, motion quality, and generative realism.
+          </p>
+          <div class="publication-image">
+            <img src="./static/images/Quantitative_experiment.png" alt="Quantitative Experiment Results">
+          </div>
+        </div>
+
+        <!-- Qualitative Experiment -->
+        <h3 class="title is-4">Qualitative experiment</h3>
+        <div class="content has-text-centered">
+          <!-- First row -->
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <div class="columns">
+                <div class="column is-6">
+                  <p style="font-size: 1.3em;">Pretrain</p>
+                  <img src="./static/videos/frequency/1/pretrain.gif" alt="Qualitative Experiment GIF 1">
+                </div>
+                <div class="column is-6">
+                  <p style="font-size: 1.3em;">Finetune</p>
+                  <img src="./static/videos/frequency/1/finetune.gif" alt="Qualitative Experiment GIF 2">
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <p>A person paces diagonally two times.</p>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="columns">
+                <div class="column is-6">
+                  <p style="font-size: 1.3em;">Pretrain</p>
+                  <img src="./static/videos/frequency/2/pretrain.gif" alt="Qualitative Experiment GIF 3">
+                </div>
+                <div class="column is-6">
+                  <p style="font-size: 1.3em;">Finetune</p>
+                  <img src="./static/videos/frequency/2/finetune.gif" alt="Qualitative Experiment GIF 4">
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <p>A person jumps forward one time.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Second row -->
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <div class="columns">
+                <div class="column is-6">
+                  <img src="./static/videos/frequency/3/pretrain.gif" alt="Qualitative Experiment GIF 5">
+                </div>
+                <div class="column is-6">
+                  <img src="./static/videos/frequency/3/finetune.gif" alt="Qualitative Experiment GIF 6">
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <p>A person who has his arms raised head high raises his arms<br>
+                   above his head and lowers them three times</p>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="columns">
+                <div class="column is-6">
+                  <img src="./static/videos/frequency/4/pretrain.gif" alt="Qualitative Experiment GIF 7">
+                </div>
+                <div class="column is-6">
+                  <img src="./static/videos/frequency/4/finetune.gif" alt="Qualitative Experiment GIF 8">
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <p>Caption for the second two images in row 2</p>
+              </div>
+            </div>
+          </div>
+          <!-- Third row -->
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <div class="columns">
+                <div class="column is-6">
+                  <img src="./static/videos/integrity/1/pretrain.gif" alt="Qualitative Experiment GIF 5">
+                </div>
+                <div class="column is-6">
+                  <img src="./static/videos/integrity/1/finetune.gif" alt="Qualitative Experiment GIF 6">
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <p>A person steps back, jumps up, and walks forward</p>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="columns">
+                <div class="column is-6">
+                  <img src="./static/videos/integrity/2/pretrain.gif" alt="Qualitative Experiment GIF 7">
+                </div>
+                <div class="column is-6">
+                  <img src="./static/videos/integrity/2/finetune.gif" alt="Qualitative Experiment GIF 8">
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <p>The figure bends down, gets on their hands and knees,<br>
+                  and begins crawling to the left</p>
+              </div>
+            </div>
+          </div>
+          <!-- Fourth row -->
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <div class="columns">
+                <div class="column is-6">
+                  <img src="./static/videos/integrity/3/pretrain.gif" alt="Qualitative Experiment GIF 5">
+                </div>
+                <div class="column is-6">
+                  <img src="./static/videos/integrity/3/finetune.gif" alt="Qualitative Experiment GIF 6">
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <p>A person walks diagonally, stomping, uses hands<br>
+                  in a karate motion, and walks backward similarly.</p>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="columns">
+                <div class="column is-6">
+                  <img src="./static/videos/integrity/4/pretrain.gif" alt="Qualitative Experiment GIF 7">
+                </div>
+                <div class="column is-6">
+                  <img src="./static/videos/integrity/4/finetune.gif" alt="Qualitative Experiment GIF 8">
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <p>Caption for the second two images in row 2</p>
+              </div>
+            </div>
+          </div>
+          <!-- Fifth row -->
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <div class="columns">
+                <div class="column is-6">
+                  <img src="./static/videos/temporal/1/pretrain.gif" alt="Qualitative Experiment GIF 5">
+                </div>
+                <div class="column is-6">
+                  <img src="./static/videos/temporal/1/finetune.gif" alt="Qualitative Experiment GIF 6">
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <p>a person walks forward , then is pushed to their<br>
+                  right and then returns to walking in the line</p>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="columns">
+                <div class="column is-6">
+                  <img src="./static/videos/temporal/2/pretrain.gif" alt="Qualitative Experiment GIF 7">
+                </div>
+                <div class="column is-6">
+                  <img src="./static/videos/temporal/2/finetune.gif" alt="Qualitative Experiment GIF 8">
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <p>a person takes a seat, appears to make a throwing<br>
+                  motion, and then stands up</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sixth row -->
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <div class="columns">
+                <div class="column is-6">
+                  <img src="./static/videos/temporal/3/pretrain.gif" alt="Qualitative Experiment GIF 5">
+                </div>
+                <div class="column is-6">
+                  <img src="./static/videos/temporal/3/finetune.gif" alt="Qualitative Experiment GIF 6">
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <p>A person walks forwards doing ballet, then raising<br>
+                  one leg, then skipping and raising the other leg</p>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="columns">
+                <div class="column is-6">
+                  <img src="./static/videos/temporal/4/pretrain.gif" alt="Qualitative Experiment GIF 7">
+                </div>
+                <div class="column is-6">
+                  <img src="./static/videos/temporal/4/finetune.gif" alt="Qualitative Experiment GIF 8">
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <p>Caption for the second two images in row 2</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Thanks for the excellent open-source project demo page template provided by <a href="https://github.com/nerfies/nerfies.github.io">source code</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
